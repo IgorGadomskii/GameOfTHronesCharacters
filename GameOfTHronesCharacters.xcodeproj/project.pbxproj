@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA013F8F28C64CBF00808E4C /* GameOfTHronesCharactersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA013F8E28C64CBF00808E4C /* GameOfTHronesCharactersApp.swift */; };
+		E3B58A2A59F2D80996E2D6FB /* Pods_GameOfTHronesCharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1625B1711561B1E2463E1A /* Pods_GameOfTHronesCharacters.framework */; };
+		FA013F8F28C64CBF00808E4C /* GameOfThronesCharactersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA013F8E28C64CBF00808E4C /* GameOfThronesCharactersApp.swift */; };
 		FA013F9128C64CBF00808E4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA013F9028C64CBF00808E4C /* ContentView.swift */; };
 		FA013F9328C64CC100808E4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA013F9228C64CC100808E4C /* Assets.xcassets */; };
 		FA013F9628C64CC100808E4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA013F9528C64CC100808E4C /* Preview Assets.xcassets */; };
+		FA3127FC28C66E3E00984907 /* MovieCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3127FB28C66E3E00984907 /* MovieCharacterModel.swift */; };
+		FA31280028C6717100984907 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3127FF28C6717000984907 /* NetworkManager.swift */; };
+		FA31280628C7B85B00984907 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA31280528C7B85B00984907 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64ECF1EB1BDEA379B188EDD7 /* Pods-GameOfTHronesCharacters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfTHronesCharacters.debug.xcconfig"; path = "Target Support Files/Pods-GameOfTHronesCharacters/Pods-GameOfTHronesCharacters.debug.xcconfig"; sourceTree = "<group>"; };
+		BAF1B9ED76C7661B30BB533F /* Pods-GameOfTHronesCharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfTHronesCharacters.release.xcconfig"; path = "Target Support Files/Pods-GameOfTHronesCharacters/Pods-GameOfTHronesCharacters.release.xcconfig"; sourceTree = "<group>"; };
 		FA013F8B28C64CBF00808E4C /* GameOfTHronesCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfTHronesCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA013F8E28C64CBF00808E4C /* GameOfTHronesCharactersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfTHronesCharactersApp.swift; sourceTree = "<group>"; };
+		FA013F8E28C64CBF00808E4C /* GameOfThronesCharactersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesCharactersApp.swift; sourceTree = "<group>"; };
 		FA013F9028C64CBF00808E4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA013F9228C64CC100808E4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA013F9528C64CC100808E4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA3127FB28C66E3E00984907 /* MovieCharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCharacterModel.swift; sourceTree = "<group>"; };
+		FA3127FF28C6717000984907 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FA31280528C7B85B00984907 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		FF1625B1711561B1E2463E1A /* Pods_GameOfTHronesCharacters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfTHronesCharacters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +36,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B58A2A59F2D80996E2D6FB /* Pods_GameOfTHronesCharacters.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A7B3D682606CE7E60FD668A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF1625B1711561B1E2463E1A /* Pods_GameOfTHronesCharacters.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CDB3955EEDE19B9AF799120 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64ECF1EB1BDEA379B188EDD7 /* Pods-GameOfTHronesCharacters.debug.xcconfig */,
+				BAF1B9ED76C7661B30BB533F /* Pods-GameOfTHronesCharacters.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA013F8228C64CBF00808E4C = {
 			isa = PBXGroup;
 			children = (
 				FA013F8D28C64CBF00808E4C /* GameOfTHronesCharacters */,
 				FA013F8C28C64CBF00808E4C /* Products */,
+				9CDB3955EEDE19B9AF799120 /* Pods */,
+				1A7B3D682606CE7E60FD668A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +81,10 @@
 		FA013F8D28C64CBF00808E4C /* GameOfTHronesCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				FA013F8E28C64CBF00808E4C /* GameOfTHronesCharactersApp.swift */,
+				FA013F8E28C64CBF00808E4C /* GameOfThronesCharactersApp.swift */,
 				FA013F9028C64CBF00808E4C /* ContentView.swift */,
+				FA31280A28C7E37500984907 /* Models */,
+				FA31280928C7E36600984907 /* Services */,
 				FA013F9228C64CC100808E4C /* Assets.xcassets */,
 				FA013F9428C64CC100808E4C /* Preview Content */,
 			);
@@ -67,6 +99,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FA31280928C7E36600984907 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA3127FF28C6717000984907 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FA31280A28C7E37500984907 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA3127FB28C66E3E00984907 /* MovieCharacterModel.swift */,
+				FA31280528C7B85B00984907 /* DataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +123,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA013F9928C64CC200808E4C /* Build configuration list for PBXNativeTarget "GameOfTHronesCharacters" */;
 			buildPhases = (
+				0E59DF941F681D926A4E889E /* [CP] Check Pods Manifest.lock */,
 				FA013F8728C64CBF00808E4C /* Sources */,
 				FA013F8828C64CBF00808E4C /* Frameworks */,
 				FA013F8928C64CBF00808E4C /* Resources */,
+				890F7372706E96BBB29410C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +183,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E59DF941F681D926A4E889E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameOfTHronesCharacters-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		890F7372706E96BBB29410C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GameOfTHronesCharacters/Pods-GameOfTHronesCharacters-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GameOfTHronesCharacters/Pods-GameOfTHronesCharacters-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GameOfTHronesCharacters/Pods-GameOfTHronesCharacters-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA013F8728C64CBF00808E4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA31280628C7B85B00984907 /* DataModel.swift in Sources */,
+				FA31280028C6717100984907 /* NetworkManager.swift in Sources */,
+				FA3127FC28C66E3E00984907 /* MovieCharacterModel.swift in Sources */,
 				FA013F9128C64CBF00808E4C /* ContentView.swift in Sources */,
-				FA013F8F28C64CBF00808E4C /* GameOfTHronesCharactersApp.swift in Sources */,
+				FA013F8F28C64CBF00808E4C /* GameOfThronesCharactersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +357,7 @@
 		};
 		FA013F9A28C64CC200808E4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64ECF1EB1BDEA379B188EDD7 /* Pods-GameOfTHronesCharacters.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +387,7 @@
 		};
 		FA013F9B28C64CC200808E4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAF1B9ED76C7661B30BB533F /* Pods-GameOfTHronesCharacters.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

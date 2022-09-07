@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  GameOfTHronesCharacters
-//
-//  Created by Macbook on 05.09.2022.
-//
+
 
 import SwiftUI
 
