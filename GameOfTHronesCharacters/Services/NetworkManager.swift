@@ -5,7 +5,7 @@ import Alamofire
 
 enum NetworkError: Error {
     case invalidURL
-    case noDate
+    case noData
     case decodingError
 }
 
@@ -15,22 +15,44 @@ class NetworkManager{
     
     init(){}
     
-    func fetchRequest(_ url: String?, completion: @escaping(Result<[MovieCharacterModel], NetworkError>) -> Void)
-    {
-        AF.request(url ?? "")
+    func fetchRequest(from url: String,
+                      completion: @escaping(Result<[MovieCharacterModel], AFError>) -> Void) {
+        AF.request( url, method: .get)
             .validate()
-            .responseDecodable(of: MovieCharacterModel.self) {
-                dataResponse in
-                    switch dataResponse.result {
-                    case .success(let value):
-                        let movieCharacters = MovieCharacterModel.getCharacters(value)
-                        DispatchQueue.main.async {
-                            completion(.success(movieCharacters(self)))
-                        }
-                    case .failure:
-                        completion(.failure(.decodingError))
-            }
-        }
+            .responseDecodable(of: [MovieCharacterModel].self) { response in
+                switch response.result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        completion(.success(data))
+                    }
+                case .failure(_):
+                    completion(.failure(.createURLRequestFailed(error: NetworkError.decodingError) ))
+                }
     }
 }
+    
+    func fetchPhoto(from url: String,
+                    completion: @escaping(Result<Data, Error>) -> Void) {
+        AF.request(url, method: .get)
+            .validate()
+            .responseData{ response in
+                switch response.result {
+                case .success(let photoData):
+                DispatchQueue.main.async {
+                        completion(.success(photoData))
+                    }
+                case .failure(_):
+                    completion(.failure(NetworkError.noData))
+                }
+            }
+    }
+        
+}
 
+
+
+
+
+
+
+    
