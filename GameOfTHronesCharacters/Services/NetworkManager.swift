@@ -2,6 +2,9 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
+import SwiftUI
+
 
 enum NetworkError: Error {
     case invalidURL
@@ -32,27 +35,22 @@ class NetworkManager{
 }
     
     func fetchPhoto(from url: String,
-                    completion: @escaping(Result<Data, Error>) -> Void) {
-        AF.request(url, method: .get)
+                    completion: @escaping(Result<UIImage, Error>) -> Void) {
+    
+        AF.request(url)
             .validate()
-            .responseData{ response in
+            .responseImage { response in
                 switch response.result {
-                case .success(let photoData):
-                DispatchQueue.main.async {
-                        completion(.success(photoData))
+                case .success(let image):
+                    DispatchQueue.global().async {
+                        completion(.success(image))
                     }
                 case .failure(_):
                     completion(.failure(NetworkError.noData))
+    
                 }
             }
     }
-        
+    
 }
 
-
-
-
-
-
-
-    

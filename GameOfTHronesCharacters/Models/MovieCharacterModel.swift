@@ -1,5 +1,6 @@
 
 import Foundation
+import Combine
 
 
 struct MovieCharacterModel: Decodable, Identifiable {
@@ -11,6 +12,8 @@ struct MovieCharacterModel: Decodable, Identifiable {
     let title: String?
     let family: String?
     let imageUrl: String?
+    
+   
 }
 
 
