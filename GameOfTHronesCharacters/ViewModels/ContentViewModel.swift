@@ -14,11 +14,11 @@ extension ContentView {
             }
         }
         
-       
         
         init(){
             fetchCharacters()
         }
+        
         
         private func fetchCharacters() {
             NetworkManager.shared.fetchRequest(from: "https://thronesapi.com/api/v2/Characters") { result in
@@ -36,9 +36,6 @@ extension ContentView {
             let filteredList = list?.filter { $0.fullName?.contains(text) ?? false} ?? []
             return filteredList
         }
-        
-        
-        
     }
 }
 

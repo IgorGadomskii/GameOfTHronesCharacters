@@ -30,8 +30,6 @@ struct ContentView: View {
                         .cornerRadius(50.0)
                 Text(result.fullName ?? "").searchCompletion(result.fullName ?? "")
                 }
-               
-                
             }
         }
         .navigationTitle("All Characters")
