@@ -3,7 +3,7 @@ import Foundation
 import Combine
 
 
-struct MovieCharacterModel: Decodable, Identifiable {
+struct MovieCharacterModel: Decodable, Identifiable, Hashable {
    
     let id: Int?
     let firstName: String?
@@ -13,7 +13,6 @@ struct MovieCharacterModel: Decodable, Identifiable {
     let family: String?
     let imageUrl: String?
     
-   
 }
 
 

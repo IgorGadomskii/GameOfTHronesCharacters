@@ -1,9 +1,7 @@
 
-
-import Foundation
 import Alamofire
 import AlamofireImage
-import SwiftUI
+
 
 
 enum NetworkError: Error {
@@ -14,7 +12,10 @@ enum NetworkError: Error {
 
 class NetworkManager{
     
+    
     static var shared = NetworkManager()
+    
+    var imageCache = AutoPurgingImageCache()
     
     init(){}
     
@@ -34,23 +35,18 @@ class NetworkManager{
     }
 }
     
-    func fetchPhoto(from url: String,
-                    completion: @escaping(Result<UIImage, Error>) -> Void) {
     
+    func fetchPhoto(from url: String) {
         AF.request(url)
             .validate()
             .responseImage { response in
-                switch response.result {
-                case .success(let image):
-                    DispatchQueue.global().async {
-                        completion(.success(image))
-                    }
-                case .failure(_):
-                    completion(.failure(NetworkError.noData))
-    
+                if response.value != nil {
+                    self.imageCache.add(response.value!, withIdentifier: url)
+                } else {
+                    print(NetworkError.noData)
                 }
             }
     }
-    
+  
 }
 

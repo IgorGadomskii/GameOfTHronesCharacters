@@ -1,17 +1,25 @@
-
-import Foundation
+import SwiftUI
 import Combine
-import UIKit
+import AlamofireImage
 
 extension ContentView {
     @MainActor class ContentViewModel: ObservableObject {
         
-        @Published private(set) var list: [MovieCharacterModel] = []
-        
-        
-        init() { fetchCharacters()
+        @Published var cache = NetworkManager.shared.imageCache
+        @Published private(set) var list: [MovieCharacterModel]? {
+            didSet {
+                for model in list ?? [] {
+                    NetworkManager.shared.fetchPhoto(from: model.imageUrl ?? "")
+                }
+            }
         }
-           
+        
+       
+        
+        init(){
+            fetchCharacters()
+        }
+        
         private func fetchCharacters() {
             NetworkManager.shared.fetchRequest(from: "https://thronesapi.com/api/v2/Characters") { result in
                 switch result {
@@ -23,22 +31,18 @@ extension ContentView {
             }
         }
         
-    func getImage (from url: String?) -> UIImage? {
-        var image: UIImage?
-            NetworkManager.shared.fetchPhoto(from: url ?? "", completion: { result in
-                switch result {
-                case .success(let data):
-                    image = data
-                case .failure(let error):
-                    print(error)
-                }
-            })
-        return image
-
+        
+        func filterList(with text: String) -> [MovieCharacterModel] {
+            let filteredList = list?.filter { $0.fullName?.contains(text) ?? false} ?? []
+            return filteredList
         }
+        
+        
         
     }
 }
+
+
 
 
 
