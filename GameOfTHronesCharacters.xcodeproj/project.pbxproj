@@ -15,6 +15,8 @@
 		FA3127FC28C66E3E00984907 /* MovieCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3127FB28C66E3E00984907 /* MovieCharacterModel.swift */; };
 		FA31280028C6717100984907 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3127FF28C6717000984907 /* NetworkManager.swift */; };
 		FA36226F28D252DB00DEE413 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36226E28D252DB00DEE413 /* ContentViewModel.swift */; };
+		FACA224328FEA2FC00DA41AC /* DetailedInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA224228FEA2FC00DA41AC /* DetailedInformation.swift */; };
+		FAD1603128EF13170023A817 /* NavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1603028EF13170023A817 /* NavigationLink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		FA3127FF28C6717000984907 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA31281228C9D63100984907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FA36226E28D252DB00DEE413 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		FACA224228FEA2FC00DA41AC /* DetailedInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedInformation.swift; sourceTree = "<group>"; };
+		FAD1603028EF13170023A817 /* NavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLink.swift; sourceTree = "<group>"; };
 		FF1625B1711561B1E2463E1A /* Pods_GameOfTHronesCharacters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfTHronesCharacters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +142,8 @@
 		FA9F84BF28CE364500F8A0C1 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				FAD1603028EF13170023A817 /* NavigationLink.swift */,
+				FACA224228FEA2FC00DA41AC /* DetailedInformation.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 				FA36226F28D252DB00DEE413 /* ContentViewModel.swift in Sources */,
 				FA31280028C6717100984907 /* NetworkManager.swift in Sources */,
 				FA3127FC28C66E3E00984907 /* MovieCharacterModel.swift in Sources */,
+				FACA224328FEA2FC00DA41AC /* DetailedInformation.swift in Sources */,
+				FAD1603128EF13170023A817 /* NavigationLink.swift in Sources */,
 				FA013F9128C64CBF00808E4C /* ContentView.swift in Sources */,
 				FA013F8F28C64CBF00808E4C /* GameOfThronesCharactersApp.swift in Sources */,
 			);

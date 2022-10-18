@@ -4,9 +4,9 @@ import AlamofireImage
 
 extension ContentView {
     @MainActor class ContentViewModel: ObservableObject {
-        
-        @Published var cache = NetworkManager.shared.imageCache
-        @Published private(set) var list: [MovieCharacterModel]? {
+
+         var cache = NetworkManager.shared.imageCache
+         @Published private(set) var list: [MovieCharacterModel]? {
             didSet {
                 for model in list ?? [] {
                     NetworkManager.shared.fetchPhoto(from: model.imageUrl ?? "")
@@ -33,7 +33,12 @@ extension ContentView {
         
         
         func filterList(with text: String) -> [MovieCharacterModel] {
-            let filteredList = list?.filter { $0.fullName?.contains(text) ?? false} ?? []
+            let filteredList: [MovieCharacterModel]
+            if text.isEmpty {
+                filteredList = list ?? []
+            } else {
+             filteredList = list?.filter { $0.fullName?.localizedStandardContains(text) ?? true} ?? []
+            }
             return filteredList
         }
     }

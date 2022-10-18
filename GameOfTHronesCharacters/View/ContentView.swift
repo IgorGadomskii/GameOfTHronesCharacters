@@ -6,40 +6,37 @@ import UIKit
 
 struct ContentView: View {
     
-    @StateObject private var viewModel = ContentViewModel()
+    @StateObject var viewModel = ContentViewModel()
     @State private var searchText: String = ""
-
+    var filteredList: [MovieCharacterModel] { viewModel.filterList(with: searchText)
+    }
+    
     var body: some View {
         NavigationView {
-        List(viewModel.list ?? []) { model in
-            HStack{
-                Image(uiImage: viewModel.cache.image(withIdentifier: model.imageUrl ?? "") ?? UIImage())
-                    .resizable()
-                    .frame(width: 80.0, height: 80.0)
-                    .cornerRadius(50.0)
-                    .padding(.horizontal, 10.0)
-                Text(model.fullName ?? "")
+            List {
+                ForEach(filteredList, id:\.self) {
+                model in
+                NavigationLinkButton(imageUrl: model.imageUrl ?? "", fullName: model.fullName ?? "", content: {DetailedInformation(image: viewModel.cache.image(withIdentifier: model.imageUrl ?? "") ?? UIImage(), fullName: model.fullName ?? "", title: model.title ?? "", family: model.family ?? "d")})
             }
-        }
-        .searchable(text: $searchText) {
-            ForEach(viewModel.filterList(with: searchText), id:\.self) {result in
-                HStack{
-                    Image(uiImage: viewModel.cache.image(withIdentifier: result.imageUrl ?? "") ?? UIImage())
-                        .resizable()
-                        .frame(width: 80.0, height: 80.0)
-                        .cornerRadius(50.0)
-                Text(result.fullName ?? "").searchCompletion(result.fullName ?? "")
-                }
             }
+            .navigationTitle("All Characters")
+            .foregroundColor(.black)
         }
-        .navigationTitle("All Characters")
-        .foregroundColor(.black)
+        .searchable(text: $searchText)
+        .onSubmit(of: .search) {
+               filteredList
+            }
+        .onChange(of: searchText) { _ in
+          filteredList
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
